@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        ip: ${nacos.host:192.168.0.1}
+        namespace: sys-${spring.profiles.actvie:dev}
+      config:
+        server-addr: localhost:8848
+        namespace: public
+        file-extension: yaml
+        prefix: env
