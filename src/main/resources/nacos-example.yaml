@@ -1,4 +1,5 @@
 spring:
+  #gateway配置
   cloud:
     gateway:
       discovery:
@@ -6,3 +7,30 @@ spring:
           #启动自动识别nacos服务。即服务名为第一路径
           enabled: true
           lower-case-service-id: true
+      sentinel:
+        transport:
+          port: 8719
+          dashboard: localhost:8080
+        datasource:
+          ds1:
+            nacos: #通过nacos实现动态配置
+              server-addr: localhost:8848
+              data-id: gateway-flow
+              group-id: DEFAULT_GROUP
+              data-type: json
+              rule-type: gateway-flow
+              #网关流控规则。用于定义服务或者自定义api组 的具体流控规则
+          ds2:
+            nacos:
+              server-addr: localhost:8848
+              data-id: gateway-api-group
+              group-id: DEFAULT_GROUP
+              data-type: json
+              rule-type: gateway-api-group
+              #对上面服务中个别接口做单独指定流控规则，那么就可以使用自定义api组。
+              #先声明 一个一个的资源，每个资源可以匹配多个接口，每个资源对应一个appName，appName就是资源。
+              #注：gateway-api-group只是声明一个个的资源，不参与指定具体的网关流控规则。
+              #网关流控规则是由rule-type: gw-flow 来指定。
+
+
+

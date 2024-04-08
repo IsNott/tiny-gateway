@@ -18,6 +18,7 @@
         <spring.boot.parent.version>3.0.7</spring.boot.parent.version>
         <spring.cloud.gateway.version>3.1.9</spring.cloud.gateway.version>
         <log4j.version>2.20.0</log4j.version>
+        <sentinel.datasource.nacos.version>1.8.6</sentinel.datasource.nacos.version>
     </properties>
 
     <parent>
@@ -51,6 +52,26 @@
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
             <version>${cloud-alibaba-version}</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.alibaba.cloud/spring-cloud-alibaba-sentinel-gateway -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-alibaba-sentinel-gateway</artifactId>
+            <version>${cloud-alibaba-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+            <version>${cloud-alibaba-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-datasource-nacos</artifactId>
+            <version>${sentinel.datasource.nacos.version}</version>
+        </dependency>
+
 
         <dependency>
             <groupId>junit</groupId>
