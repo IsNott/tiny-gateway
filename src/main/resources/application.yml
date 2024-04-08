@@ -3,3 +3,6 @@ server:
 spring:
   application:
     name: tiny-gateway
+
+logging:
+  config: classpath:logback.xml

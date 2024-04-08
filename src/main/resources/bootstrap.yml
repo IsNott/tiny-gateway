@@ -3,10 +3,10 @@ spring:
     nacos:
       discovery:
         server-addr: localhost:8848
-        ip: ${nacos.host:192.168.0.1}
-        namespace: sys-${spring.profiles.actvie:dev}
+        ip: ${nacos.host:127.0.0.1}
+        namespace:  public
       config:
         server-addr: localhost:8848
         namespace: public
         file-extension: yaml
-        prefix: env
+        prefix: gateway

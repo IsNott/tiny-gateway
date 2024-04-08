@@ -1,0 +1,8 @@
+spring:
+  #gateway配置
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          #启动自动识别nacos服务。即服务名为第一路径
+          enabled: true
